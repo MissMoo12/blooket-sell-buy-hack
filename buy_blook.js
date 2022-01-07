@@ -10,8 +10,7 @@ async function getName(authToken) {
 
 const NAME = await getName(TOKEN.split("JWT ")[1]);
 
-for (var i = 0; i <= 20; i++) {
-    const RES = await fetch("https://api.blooket.com/api/users/unlockblook", {
+const RES = await fetch("https://api.blooket.com/api/users/unlockblook", {
         "headers": {
             "accept": "application/json, text/plain, */*",
             "accept-language": "en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7",
@@ -26,9 +25,9 @@ for (var i = 0; i <= 20; i++) {
     })
 }
 
-// if (RES.status == 200) {
-//     alert("Successfully bought box " + BOX + " for " + NAME + ". ");
-// }
-// else {
-//     alert("Error: " + RES.statusText);
-// }
+ if (RES.status == 200) {
+     alert("Successfully bought box " + BOX + " for " + NAME + ". ");
+ }
+ else {
+     alert("Error: " + RES.statusText);
+ }
